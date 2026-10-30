@@ -1,0 +1,34 @@
+// Entorno de la clase 5.1 (PRO203): Debian 13 con Git, en GitHub Codespaces.
+{
+  "name": "PRO203 · Git y GitHub (Debian 13)",
+
+  // Imagen oficial de dev containers sobre Debian 13 (trixie): trae git, sudo y el usuario "vscode".
+  "image": "mcr.microsoft.com/devcontainers/base:2-trixie",
+
+  // GitHub CLI, para "gh pr create".
+  "features": {
+     "ghcr.io/devcontainers/features/github-cli:1": {},
+     "ghcr.io/devcontainers/features/python:1": {
+     "version": "os-provided",
+     "installTools": false
+    }
+  },
+
+  // La máquina de 2 núcleos basta y gasta menos cuota.
+  "hostRequirements": {
+    "cpus": 2
+  },
+
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "git.autofetch": false
+      },
+      "extensions": ["mhutchie.git-graph"]
+    },
+    "codespaces": {
+      "openFiles": ["README.md"]
+    }
+  }
+}
